@@ -14,11 +14,11 @@ export const items = {
         imageUrlDesktop: "/result/Banner.png",
         imageUrlMobile: "/result/02-Banner.png", // Adicione o URL da imagem para mobile aqui
       },
-      {
-        id: 2,
-        imageUrlDesktop: "/result/Banner.png",
-        imageUrlMobile: "/result/02-Banner.png",
-      },
+      // {
+      //   id: 2,
+      //   imageUrlDesktop: "/result/Banner.png",
+      //   imageUrlMobile: "/result/02-Banner.png",
+      // },
     ],
   },
 };
@@ -39,12 +39,7 @@ export default function ResponsiveCarousel() {
     };
   }, []);
   return (
-    <Carousel
-      dynamicHeight
-      showThumbs={false}
-      showIndicators={false}
-      showStatus={false}
-    >
+    <>
       {items.items.responsive.map((item) => (
         <div key={item.id} className="relative w-full h-[600px] md:h-[600px]">
           <Image
@@ -68,6 +63,37 @@ export default function ResponsiveCarousel() {
           </div>
         </div>
       ))}
-    </Carousel>
+    </>
+    // <Carousel
+    //   dynamicHeight
+    //   showThumbs={false}
+    //   showIndicators={false}
+    //   showStatus={false}
+
+    // >
+    //   {items.items.responsive.map((item) => (
+    //     <div key={item.id} className="relative w-full h-[600px] md:h-[600px]">
+    //       <Image
+    //         src={isMobile ? item.imageUrlMobile : item.imageUrlDesktop}
+    //         alt="Banner"
+    //         layout="fill"
+    //         objectFit="cover"
+    //         priority
+    //       />
+    //       <div className="absolute inset-0 mx-auto w-[300px] sm:px-9 md:w-auto flex flex-col items-center justify-center gap-6 text-white">
+    //         <p>SEJA BEM VINDO</p>
+    //         <div className="border-2 border-blue-500 w-[187px]" />
+    //         <p className=" font-bold text-2xl md:text-5xl text-center">
+    //           TRANSFORMAR É SIMPLES!
+    //         </p>
+    //         <p className="text-center">
+    //           Somos uma consultoria de dados especializada em transformar
+    //           informações em insights e automação.
+    //         </p>
+    //         <span className="indicator-dot"></span>
+    //       </div>
+    //     </div>
+    //   ))}
+    // </Carousel>
   );
 }

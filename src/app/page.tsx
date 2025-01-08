@@ -35,6 +35,7 @@ export default function Home() {
         </section>
 
         <section
+          id="about"
           className="
             sm: h-full
             lg:px-20 
@@ -43,6 +44,7 @@ export default function Home() {
           <About />
         </section>
         <section
+          id="method"
           className="
          w-full 
          mt-8
@@ -51,6 +53,7 @@ export default function Home() {
           <Method />
         </section>
         <section
+          id="tech"
           className="
          w-full 
          mt-8
@@ -60,6 +63,7 @@ export default function Home() {
         </section>
 
         <section
+          id="cases"
           className="
          w-full 
          mt-8
@@ -69,6 +73,7 @@ export default function Home() {
         </section>
 
         <section
+          id="contact"
           className="
          w-full 
          mt-8

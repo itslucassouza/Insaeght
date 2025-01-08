@@ -7,45 +7,97 @@ import Image from "next/image";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Função para rolar suavemente até uma seção
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsOpen(false); // Fecha o menu mobile após o clique
+  };
+
   return (
-    <header className="absolute top-0 left-0 w-full z-10 bg-black bg-opacity-30 h-[115px]  ">
-      <div className=" mt-2 sm:justify-center md:container mx-auto p flex justify-center items-center ">
+    <header className="absolute top-0 left-0 w-full z-10 bg-black bg-opacity-30 h-[115px]">
+      <div className="mt-2 sm:justify-center md:container mx-auto p flex justify-center items-center">
+        {/* Botão do menu para mobile */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden text-white text-3xl"
         >
           {isOpen ? <AiOutlineClose /> : <FiMenu />}
         </button>
+
         {/* Logo */}
-        <div className="ml-[30px] lg:mr-0 flex justify-center items-center space-x-2 p-10 ">
+        <div className="ml-[30px] lg:mr-0 flex justify-center items-center space-x-2 p-10">
           <Image src="/result/logo.png" width={140} height={253} alt="Logo" />
         </div>
-        {/* Botão do menu para mobile */}
 
         {/* Links da seção de desktop */}
-        <nav className="hidden md:flex space-x-6 text-white">
-          <a href="#" className="hover:text-gray-300">
+        <nav className="hidden md:flex space-x-6 text-white mr-8">
+          <a
+            href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("home");
+            }}
+            className="hover:text-gray-300"
+          >
             HOME
           </a>
-          <a href="#" className="hover:text-gray-300">
+          <a
+            href="#about"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("about");
+            }}
+            className="hover:text-gray-300"
+          >
             SOBRE
           </a>
-          <a href="#" className="hover:text-gray-300">
+          <a
+            href="#method"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("method");
+            }}
+            className="hover:text-gray-300"
+          >
             MÉTODO
           </a>
-          <a href="#" className="hover:text-gray-300">
+          <a
+            href="#tech"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("tech");
+            }}
+            className="hover:text-gray-300"
+          >
             TECNOLOGIA
           </a>
-          <a href="#" className="hover:text-gray-300">
+          <a
+            href="#cases"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("cases");
+            }}
+            className="hover:text-gray-300"
+          >
             CASES
           </a>
-          <a href="#" className="hover:text-gray-300">
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("contact");
+            }}
+            className="hover:text-gray-300"
+          >
             CONTATO
           </a>
         </nav>
 
         {/* Ícone do WhatsApp */}
-        <div className="sm: ml-0 md:flex items-center ml-8">
+        <div className="sm:ml-0 md:flex items-center cursor-pointer  ">
           <FaWhatsapp className="text-3xl text-white" />
         </div>
 
@@ -63,24 +115,66 @@ const Header = () => {
               width={150}
               height={200}
               alt="Banner"
-            />{" "}
-            {/* Opacidade do menu mobile ajustada */}
-            <a href="#" className="hover:text-gray-300">
+            />
+            {/* Links do menu mobile */}
+            <a
+              href="#home"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("home");
+              }}
+              className="hover:text-gray-300"
+            >
               HOME
             </a>
-            <a href="#" className="hover:text-gray-300">
+            <a
+              href="#about"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("about");
+              }}
+              className="hover:text-gray-300"
+            >
               SOBRE
             </a>
-            <a href="#" className="hover:text-gray-300">
+            <a
+              href="#method"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("method");
+              }}
+              className="hover:text-gray-300"
+            >
               MÉTODO
             </a>
-            <a href="#" className="hover:text-gray-300">
+            <a
+              href="#tech"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("tech");
+              }}
+              className="hover:text-gray-300"
+            >
               TECNOLOGIA
             </a>
-            <a href="#" className="hover:text-gray-300">
+            <a
+              href="#cases"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("cases");
+              }}
+              className="hover:text-gray-300"
+            >
               CASES
             </a>
-            <a href="#" className="hover:text-gray-300">
+            <a
+              href="#contact"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("contact");
+              }}
+              className="hover:text-gray-300"
+            >
               CONTATO
             </a>
           </nav>

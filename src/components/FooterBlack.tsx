@@ -13,8 +13,8 @@ export function FooterTablack() {
       >
         <div
           className="
-        w-full lg:w-[1000px] 
-        flex items-start justify-start p-10
+        w-full lg:w-[1000px]  
+        flex items-center justify-center p-10
         "
         >
           <Image src="/result/logo.png" width={130} height={130} alt="Banner" />

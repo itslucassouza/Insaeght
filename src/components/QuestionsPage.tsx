@@ -73,6 +73,7 @@ const Form: React.FC = () => {
           <button
             type="submit"
             className="w-full px-6 
+            cursor-pointer
             flex items-center justify-center gap-2
             py-2 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 focus:ring-4 focus:ring-purple-300"
           >

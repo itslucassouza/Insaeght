@@ -1,23 +1,35 @@
 import { useState } from "react";
 
-const tech = [
-  { name: "Alteryx;" },
-  { name: "PDI;" },
-  { name: "Apache Hop;" },
-  { name: "Data integration;" },
-];
-
-const techRight = [{ name: "Python;" }, { name: "R;" }, { name: "SQL;" }];
-
 const sections = [
-  { name: "Tratamento de dados", content: [...tech, ...techRight] },
+  {
+    name: "Tratamento de dados",
+    content: [
+      { name: "Alteryx;" },
+      { name: "PDI;" },
+      { name: "Apache Hop;" },
+      { name: "Data integration;" },
+      { name: "Python;" },
+      { name: "R;" },
+      { name: "SQL;" },
+    ],
+  },
   {
     name: "Orquestradores",
-    content: [{ name: "Conteúdo para Orquestradores" }],
+    content: [
+      { name: "Amazon Web Services (AWS)" },
+      { name: "Google cloud Platform (GCP)" },
+      { name: "Microsoft Azure" },
+    ],
   },
-  { name: "Visualização", content: [{ name: "Conteúdo para Visualização" }] },
-  { name: "Ambientes", content: [{ name: "Conteúdo para Ambientes" }] },
-  { name: "Ecossistema", content: [{ name: "Conteúdo para Ecossistema" }] },
+  {
+    name: "Visualização",
+    content: [
+      { name: "Tableau" },
+      { name: "Power BI" },
+      { name: "Qlik Sense" },
+      { name: "Google Data Studio" },
+    ],
+  },
 ];
 
 export function Tech() {
@@ -50,7 +62,7 @@ export function Tech() {
               <div className="border border-[#2BC0FB] w-[90%]" />
             </div>
             {activeSection === section.name && (
-              <div className="mt-2 text-[#002944] flex items-center justify-center w-full">
+              <div className="mt-2 text-[#002944] grid grid-cols-2 grid-rows-3 w-[60%]">
                 {section.content.map((item, index) => (
                   <p key={index} className="text-sm">
                     • {item.name}
