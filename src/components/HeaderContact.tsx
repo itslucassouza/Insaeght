@@ -18,7 +18,7 @@ export function ContactHeader() {
             />
             <p className="font-bold">+55 11 99999.9999</p>
           </div>
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 ml-3">
             <Image
               src="/result/icons/01-icone-02.png"
               width={15}

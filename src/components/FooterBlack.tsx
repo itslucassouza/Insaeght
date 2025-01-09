@@ -1,6 +1,13 @@
 import Image from "next/image";
 
 export function FooterTablack() {
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <div
@@ -17,7 +24,79 @@ export function FooterTablack() {
         flex items-center justify-center p-10
         "
         >
-          <Image src="/result/logo.png" width={130} height={130} alt="Banner" />
+          <div className=" w-full flex p-8">
+            <Image
+              src="/result/logo.png"
+              width={230}
+              height={130}
+              alt="Banner"
+            />
+            <nav
+              className=" 
+                     sm: hidden md:flex mt-4 w-full justify-between items-center text-white px-8"
+            >
+              <a
+                href="#home"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("home");
+                }}
+                className="hover:text-gray-300"
+              >
+                HOME
+              </a>
+              <a
+                href="#about"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("about");
+                }}
+                className="hover:text-gray-300"
+              >
+                SOBRE
+              </a>
+              <a
+                href="#method"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("method");
+                }}
+                className="hover:text-gray-300"
+              >
+                MÉTODO
+              </a>
+              <a
+                href="#tech"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("tech");
+                }}
+                className="hover:text-gray-300"
+              >
+                TECNOLOGIA
+              </a>
+              <a
+                href="#cases"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("cases");
+                }}
+                className="hover:text-gray-300"
+              >
+                CASES
+              </a>
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("contact");
+                }}
+                className="hover:text-gray-300"
+              >
+                CONTATO
+              </a>
+            </nav>
+          </div>
         </div>
       </div>
       <div className=" flex items-center justify-center p-2">

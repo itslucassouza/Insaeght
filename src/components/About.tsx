@@ -46,14 +46,14 @@ export function About() {
       >
         <div className="sm:p-0 flex gap-4 md:flex flex-col">
           <div>
-            <p className="text-[#707070] mt-4">/ sobre /</p>
+            <p className="text-[#707070] mt-4 opacity-50">/ sobre /</p>
           </div>
 
           <div className="flex flex-wrap">
-            <p className="text-4xl leading-none text-[#707070] mb-1">
+            <p className="text-2xl leading-none text-[#707070] mb-1">
               INSAEGHT
             </p>
-            <p className="text-4xl text-[#707070] leading-none">
+            <p className="text-2xl text-[#707070] leading-none">
               Talentos diversos e uma paixao compartilhada pela excelência
             </p>
           </div>
@@ -72,7 +72,7 @@ export function About() {
         <div className="flex items-center justify-center mt-[49px]">
           <Image
             src="/result/03-Sobre.png"
-            width={isMobile ? 300 : 800}
+            width={isMobile ? 300 : 600}
             height={isMobile ? 400 : 300}
             alt="Banner"
           />

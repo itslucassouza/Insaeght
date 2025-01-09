@@ -1,9 +1,37 @@
+import React, { useRef } from "react";
 import Image from "next/image";
+import emailjs from "emailjs-com";
 
 const Form: React.FC = () => {
+  const form = useRef<HTMLFormElement>(null);
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (form.current) {
+      emailjs
+        .sendForm(
+          "seu_service_id", // Substitua pelo seu Service ID
+          "seu_template_id", // Substitua pelo seu Template ID
+          form.current,
+          "seu_user_id" // Substitua pelo seu User ID
+        )
+        .then(
+          (result) => {
+            console.log("E-mail enviado com sucesso!", result.text);
+            alert("Mensagem enviada com sucesso!");
+          },
+          (error) => {
+            console.log("Erro ao enviar e-mail:", error.text);
+            alert("Erro ao enviar a mensagem. Tente novamente.");
+          }
+        );
+    }
+  };
+
   return (
     <div className="flex w-full h-full">
-      <form className="grid grid-cols-2 gap-4">
+      <form ref={form} onSubmit={sendEmail} className="grid grid-cols-2 gap-4">
         <div>
           <label htmlFor="nome" className="sr-only">
             Nome
@@ -11,6 +39,7 @@ const Form: React.FC = () => {
           <input
             type="text"
             id="nome"
+            name="nome"
             placeholder="Nome"
             className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
@@ -22,6 +51,7 @@ const Form: React.FC = () => {
           <input
             type="text"
             id="sobrenome"
+            name="sobrenome"
             placeholder="Sobrenome"
             className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
@@ -33,6 +63,7 @@ const Form: React.FC = () => {
           <input
             type="email"
             id="email"
+            name="email"
             placeholder="E-mail"
             className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
@@ -44,6 +75,7 @@ const Form: React.FC = () => {
           <input
             type="tel"
             id="whatsapp"
+            name="whatsapp"
             placeholder="WhatsApp"
             className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
@@ -55,6 +87,7 @@ const Form: React.FC = () => {
           <input
             type="text"
             id="endereco"
+            name="endereco"
             placeholder="Endereço"
             className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
@@ -65,6 +98,7 @@ const Form: React.FC = () => {
           </label>
           <textarea
             id="mensagem"
+            name="mensagem"
             placeholder="Mensagem"
             className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
           ></textarea>
@@ -119,7 +153,7 @@ export function QuestionsPage() {
             />
             <div className="text-sm text-[#383837]">
               <p>Av. Paulista, 1106, Sala 01 </p>
-              <p>16º Andar | Bela Vista, SP</p>
+              <p>16º Andar | Bela Vista, SP</p>
             </div>
           </div>
           <div className="flex gap-3 text-sm ">

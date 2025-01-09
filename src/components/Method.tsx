@@ -228,10 +228,10 @@ const Modal = ({ isOpen, onClose, content }: any) => {
 const MethodItem = ({ item, openModal }: MethodItemProps) => {
   return (
     <>
-      <div className="w-full flex justify-center items-center sm:w-full md:w-[600px]">
+      <div className="w-full  flex justify-center items-center sm:w-full md:w-[600px]">
         {item.left && (
           <div className="mt-[-20px] ml-[120px] flex">
-            <div className="text-4xl text-[#FFFFFF] flex items-center min-w-[40px]">
+            <div className="text-5xl text-[#FFFFFF] flex items-center min-w-[40px] pr-4">
               {item.value}
             </div>
             <Image
@@ -254,15 +254,39 @@ const MethodItem = ({ item, openModal }: MethodItemProps) => {
             <p className="text-medium">{item.description}</p>
           </div>
         </div>
-        {!item.left && (
-          <div className="flex mt-[-20px] ml-[-80px]">
+        {!item.left && Number(item.value) !== 6 && (
+          <div className="flex mt-[-20px] ml-[-30px] ">
             <Image
               src="/result/06-Seta-02.png"
               width={150}
               height={150}
               alt={""}
             />
-            <div className="text-4xl text-[#FFFFFF] flex items-center">
+            <div className="text-5xl text-[#FFFFFF] flex items-center pl-5  ">
+              {item.value}
+            </div>
+          </div>
+        )}
+        {!item.left && Number(item.value) === 6 && (
+          <div className="flex mt-[-20px] ml-[-20px] ">
+            <div className=" flex h-full flex-col items-center justify-center position-relative">
+              <Image
+                src="/result/06-Seta-03.png"
+                width={150}
+                height={150}
+                alt={""}
+              />
+              <div>
+                <Image
+                  src="/result/06-Seta-04.png"
+                  width={100}
+                  height={100}
+                  alt={""}
+                  className=" relative  left-[73px] top-[15px] mb-20"
+                />
+              </div>
+            </div>
+            <div className="text-5xl text-[#FFFFFF] flex items-center  pl-5 ">
               {item.value}
             </div>
           </div>

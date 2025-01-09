@@ -26,6 +26,7 @@ export default function Home() {
           px-[1.5rem] 
           lg:px-[0] 
           max-w-[1105px] mx-auto"
+          id="home"
         >
           <Header />
         </section>
