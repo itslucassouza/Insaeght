@@ -79,8 +79,12 @@ export function About() {
         </div>
       </div>
 
-      <div className="w-full flex overflow-hidden justify-center md:w-[1000px] ">
-        <div className="flex sm:overflow-x-auto gap-6 items-center h-full max-w-[90vw] ">
+      {/* Contêiner dos cards com scroll horizontal e barra de scroll oculta */}
+      <div className="w-full flex overflow-hidden justify-center md:w-[1000px]">
+        <div
+          className="flex overflow-x-auto gap-6 items-center h-full max-w-[90vw] scroll-snap-x-mandatory hide-scrollbar"
+          style={{ scrollSnapType: "x mandatory" }}
+        >
           {about.map((item) => (
             <div
               key={item.title}
@@ -88,14 +92,15 @@ export function About() {
                 min-w-[80%] 
                 border
                 bg-[#FBFBFB]
-                ml-4 lg:ml-0 sm:min-w-[90%] md:min-w-[30%] h-[400px] flex flex-col items-center justify-center shadow-lg rounded-lg"
+                ml-4 lg:ml-0 sm:min-w-[90%] md:min-w-[30%] h-[400px] flex flex-col items-center justify-center shadow-lg rounded-lg scroll-snap-align-start"
+              style={{ scrollSnapAlign: "start" }}
             >
-              <div className="flex  items-center justify-center ">
+              <div className="flex items-center justify-center">
                 <Image src={item.icon} width={170} height={170} alt="Banner" />
               </div>
-              <div className="mt-4 items-center  text-center  ">
+              <div className="mt-4 items-center text-center">
                 <p className="text-purple-600 font-semibold">{item.title}</p>
-                <div className=" bg-[#2BC0FB] h-[2px] w-full  px-0 mt-2" />
+                <div className="bg-[#2BC0FB] h-[2px] w-full px-0 mt-2" />
               </div>
               <div className="flex items-center text-center w-full justify-center text-sm mt-4">
                 <span>{item.description}</span>
@@ -104,6 +109,7 @@ export function About() {
           ))}
         </div>
       </div>
+
       <div className="flex items-center justify-center mt-[19px]">
         <Image
           src="/result/03-Sobre.png"
@@ -112,6 +118,17 @@ export function About() {
           alt="Banner"
         />
       </div>
+
+      {/* Estilo para ocultar a barra de scroll */}
+      <style jsx>{`
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none; /* Oculta a barra de scroll no Chrome, Safari e Opera */
+        }
+        .hide-scrollbar {
+          -ms-overflow-style: none; /* Oculta a barra de scroll no IE e Edge */
+          scrollbar-width: none; /* Oculta a barra de scroll no Firefox */
+        }
+      `}</style>
     </section>
   );
 }

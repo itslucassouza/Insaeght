@@ -46,7 +46,7 @@ const methods: methodProps[] = [
     title: "Direção",
     description:
       "Definição de skills necessárias, horas da equipe e cronograma geral",
-    icon: "/result/icons/06-02-Direção.png",
+    icon: "/result/icons/06-02-Direcao.png",
     modalValues: {
       modalTitle: "Direção",
       modalNumber: "02",
@@ -70,7 +70,7 @@ const methods: methodProps[] = [
     description:
       "Análise detalhada da solicitação, criação do cronograma de trabalho e solicitação de acessos",
     left: true,
-    icon: "/result/icons/06-03-Preparação.png",
+    icon: "/result/icons/06-03-Preparacao.png",
     modalValues: {
       modalTitle: "Preparação",
       modalNumber: "03",
@@ -95,7 +95,7 @@ const methods: methodProps[] = [
   },
   {
     value: "04",
-    title: "Roteiro (Padrões)",
+    title: "Roteiro ",
     description:
       "Estabelecimento de padrões de desenvolvimento alinhados às melhores práticas do mercado",
     icon: "/result/icons/06-04-Roteiro.png",
@@ -118,13 +118,13 @@ const methods: methodProps[] = [
   },
   {
     value: "05",
-    title: "Expedição (Jornada)",
+    title: "Expedição",
     description:
       "Implementação dos padrões estabelecidos, testes unitários, validação com o cliente e publicação",
     left: true,
-    icon: "/result/icons/06-05-Expedição.png",
+    icon: "/result/icons/06-05-Expedicao.png",
     modalValues: {
-      modalTitle: "Expedição (Jornada)",
+      modalTitle: "Expedição",
       modalNumber: "05",
       contents: [
         {

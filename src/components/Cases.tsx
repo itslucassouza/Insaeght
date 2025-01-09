@@ -29,8 +29,8 @@ export function Cases() {
       <div
         className="
         sm:w-full py-4
-        md:w-[900px]
-        p-0 lg:py-6 
+        md:w-[900px] 
+        p-0 lg:py-12
        mx-auto flex flex-col items-center justify-center"
       >
         <h3 className="text-[#A711FF] text-2xl font-bold mb-4">CASES</h3>

@@ -5,10 +5,11 @@ export function ContactHeader() {
     <div className="flex items-center justify-center py-2 gap-4 bg-[#383837] text-white ">
       <div
         className="max-w-[1105px]
+         px-4
          w-full mx-auto flex md:justify-between
       "
       >
-        <div className="flex text-xs items-center gap-2 ">
+        <div className="flex text-xs items-center gap-2  w-full">
           <div className="flex items-center gap-1 ml-">
             <Image
               src="/result/icons/01-icone-01.png"
@@ -16,7 +17,7 @@ export function ContactHeader() {
               height={10}
               alt="Banner"
             />
-            <p className="font-bold">+55 11 99999.9999</p>
+            <p className="sm: hidden md:block font-bold">+55 11 99999.9999</p>
           </div>
           <div className="flex items-center gap-1 ml-3">
             <Image
@@ -25,7 +26,9 @@ export function ContactHeader() {
               height={10}
               alt="Banner"
             />
-            <p className="font-bold">contato@insaeght.com.br</p>
+            <p className="sm: hidden md:block font-bold">
+              contato@insaeght.com.br
+            </p>
           </div>
         </div>
         <div className="flex gap-1 ml-2">

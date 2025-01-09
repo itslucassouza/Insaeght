@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
@@ -6,6 +6,20 @@ import Image from "next/image";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Bloqueia o scroll da página quando o menu está aberto
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    // Limpa a classe ao desmontar o componente
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [isOpen]);
 
   // Função para rolar suavemente até uma seção
   const scrollToSection = (id: string) => {
@@ -100,16 +114,25 @@ const Header = () => {
         <div className="sm:ml-0 md:flex items-center cursor-pointer  ">
           <FaWhatsapp className="text-3xl text-white" />
         </div>
+      </div>
 
-        {/* Menu mobile */}
-        {isOpen && (
+      {/* Menu mobile */}
+      {isOpen && (
+        <>
           <nav
             className="absolute 
           w-full
-          h-[100vh]
+          min-h-[100vh]
+          h-[100%]
           top-0 left-0 bottom-0 right-0
           bg-[#A711FF] bg-opacity-80 flex flex-col items-center justify-center space-y-6 p-4 text-white md:hidden"
           >
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden  w-[80%] flex justify-end"
+            >
+              {isOpen ? <AiOutlineClose size={30} /> : <FiMenu />}
+            </button>
             <Image
               src="/result/logo.png"
               width={150}
@@ -178,8 +201,8 @@ const Header = () => {
               CONTATO
             </a>
           </nav>
-        )}
-      </div>
+        </>
+      )}
     </header>
   );
 };

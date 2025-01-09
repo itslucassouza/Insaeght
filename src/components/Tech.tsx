@@ -58,13 +58,13 @@ export function Tech() {
             onClick={() => handleSectionClick(section.name)}
           >
             <div className="flex flex-col justify-center items-center">
-              <p className="text-[#A711FF] font-semibold">{section.name}</p>
+              <p className="text-[#A711FF] font-semibold ">{section.name}</p>
               <div className="border border-[#2BC0FB] w-[90%]" />
             </div>
             {activeSection === section.name && (
-              <div className="mt-2 text-[#002944] grid grid-cols-2 grid-rows-3 w-[60%]">
+              <div className="mt-2 text-[#002944] grid grid-cols-2 sm:w-[80%] md:w-[60%]">
                 {section.content.map((item, index) => (
-                  <p key={index} className="text-sm">
+                  <p key={index} className="text-sm  m-0">
                     • {item.name}
                   </p>
                 ))}

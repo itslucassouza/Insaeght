@@ -24,7 +24,7 @@ export function FooterTablack() {
         flex items-center justify-center p-10
         "
         >
-          <div className=" w-full flex p-8">
+          <div className=" w-full flex p-8 items-center justify-center">
             <Image
               src="/result/logo.png"
               width={230}
@@ -33,7 +33,7 @@ export function FooterTablack() {
             />
             <nav
               className=" 
-                     sm: hidden md:flex mt-4 w-full justify-between items-center text-white px-8"
+                     sm: hidden md:flex mt-4 w-full justify-between items-center text-white px-8 "
             >
               <a
                 href="#home"
