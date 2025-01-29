@@ -57,13 +57,19 @@ export function Cases() {
                 <Image src={item.icon} width={55} height={55} alt="Banner" />
               </div>
               <div className="w-[90%]">
-                <p className="text-xs font-bold mb-1">
+                <p className="text-md font-bold mb-1 text-[#fffff]">
                   Área de atuação:{" "}
-                  <span className="text-sm  mb-1">{item.lebel}</span>
+                  <span className="text-xs mb-1 text-[#D5D5D5]">
+                    {item.lebel}
+                  </span>
                 </p>
                 <div className="border-2 border-[#FFFFFF] w-[10%] mt-1 mb-1" />
-                <p className="font-bold text-sm ">
-                  Projeto: <span className="text-sm "> {item.project} </span>
+                <p className="text-md font-bold mb-1 text-[#fffff]">
+                  Projeto:{" "}
+                  <span className="text-xs mb-1 text-[#D5D5D5]">
+                    {" "}
+                    {item.project}{" "}
+                  </span>
                 </p>
               </div>
             </div>

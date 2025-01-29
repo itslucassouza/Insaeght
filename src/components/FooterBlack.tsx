@@ -26,10 +26,11 @@ export function FooterTablack() {
         >
           <div className=" w-full flex p-8 items-center justify-center">
             <Image
-              src="/result/logo.png"
-              width={230}
-              height={130}
+              src="/result/INSAEGHT-MARCA-02.svg"
+              width={200}
+              height={200}
               alt="Banner"
+              priority
             />
             <nav
               className=" 

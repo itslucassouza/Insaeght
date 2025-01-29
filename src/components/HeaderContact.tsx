@@ -4,7 +4,7 @@ export function ContactHeader() {
   return (
     <div className="flex items-center justify-center py-2 gap-4 bg-[#383837] text-white ">
       <div
-        className="max-w-[1105px]
+        className="max-w-[1000px]
          px-4
          w-full mx-auto flex md:justify-between
       "

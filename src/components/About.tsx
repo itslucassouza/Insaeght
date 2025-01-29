@@ -18,7 +18,7 @@ const about = [
     title: "VALORES",
     description:
       "Determinação em valorizar pessoas, simplificar caminhos e transformar resultados.",
-    icon: "/result/valores.png",
+    icon: "/result/valo.png",
   },
 ];
 
@@ -27,14 +27,14 @@ export function About() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Define como "mobile" se a largura for menor ou igual a 768px
+      setIsMobile(window.innerWidth <= 768);
     };
 
-    handleResize(); // Verifica o tamanho da tela no carregamento
-    window.addEventListener("resize", handleResize); // Adiciona um listener para redimensionamento
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize); // Limpa o listener quando o componente é desmontado
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 

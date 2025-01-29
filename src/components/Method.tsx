@@ -187,7 +187,7 @@ const Modal = ({ isOpen, onClose, content }: any) => {
 
   return (
     <div className="fixed inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30">
-      <div className="w-[38%] flex justify-end items-end">
+      <div className="w-[50%] flex justify-end items-end ">
         <AiOutlineClose
           onClick={onClose}
           color="white"
@@ -196,29 +196,34 @@ const Modal = ({ isOpen, onClose, content }: any) => {
         />
       </div>
 
-      <div className="relative w-[90%] max-w-lg p-6 bg-[url('/result/bgmodal.png')] bg-cover bg-no-repeat overflow-hidden">
+      <div className="relative w-[50%] p-6 bg-[url('/result/bgmodal.png')] bg-cover bg-no-repeat overflow-hidden">
         {/* Fundo com efeito de papel cortado */}
         <div
-          className="absolute inset-0 -z-10 bg-gray-100"
+          className="absolute inset-0 -z-10 bg-gray-100 "
           style={{
             clipPath:
               "polygon(10% 0%, 90% 0%, 100% 90%, 90% 100%, 10% 100%, 0% 90%)",
           }}
         ></div>
 
-        <div>
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">
-            {content.modalNumber} - {content.modalTitle}
-          </h2>
+        <div className="flex gap-4 mt-4">
+          <div>
+            <p className="text-5xl">{content.modalNumber}</p>
+          </div>
+          <div>
+            <p className="text-gray-700 mb-2 text-2xl mb-4">
+              <strong> {content.modalTitle}</strong>
+            </p>
 
-          {content.contents?.map((item: any, index: number) => (
-            <div key={index} className="mb-4">
-              <p className="text-gray-700 mb-2">
-                {item.title && <strong>{item.title}:</strong>}{" "}
-                {item.content || "N/A"}
-              </p>
-            </div>
-          ))}
+            {content.contents?.map((item: any, index: number) => (
+              <div key={index} className="mb-4">
+                <p className="text-gray-700 mb-2">
+                  {item.title && <strong>{item.title}:</strong>}{" "}
+                  {item.content || "N/A"}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -228,12 +233,16 @@ const Modal = ({ isOpen, onClose, content }: any) => {
 const MethodItem = ({ item, openModal }: MethodItemProps) => {
   return (
     <>
-      <div className="w-full  flex justify-center items-center sm:w-full md:w-[600px]">
+      <div
+        className="w-full 
+        flex justify-center items-center sm:w-full md:w-[600px]"
+        style={{
+          marginLeft: item.left ? "210px" : "0",
+          marginTop: item.left ? "-5px" : 0,
+        }}
+      >
         {item.left && (
-          <div className="mt-[-20px] ml-[120px] flex">
-            <div className="text-5xl text-[#FFFFFF] flex items-center min-w-[40px] pr-4">
-              {item.value}
-            </div>
+          <div className="flex mt-[-20px] ml-[-30px] ">
             <Image
               src="/result/06-Seta-01.png"
               width={150}
@@ -243,19 +252,20 @@ const MethodItem = ({ item, openModal }: MethodItemProps) => {
           </div>
         )}
         <div
-          className="cursor-pointer mt-[-15px] bg-[#1C2026] flex h-[130px] rounded-[131px] text-[#9FA7C4] px-4 p-16 gap-4 items-center ml-[-80px] w-[395px]"
+          className="cursor-pointer  mt-[-15px] bg-[#1C2026] flex h-[130px] rounded-[131px] text-[#9FA7C4] px-4 p-16 gap-4 items-center ml-[-80px] w-[495px]"
           onClick={() => openModal(item.modalValues)}
         >
           <div className="flex items-center justify-center">
-            <Image src={item.icon} width={100} height={100} alt={""} />
+            <Image src={item.icon} width={80} height={100} alt={""} />
           </div>
           <div>
             <p className="font-bold text-lg">{item.title}</p>
             <p className="text-medium">{item.description}</p>
           </div>
         </div>
+
         {!item.left && Number(item.value) !== 6 && (
-          <div className="flex mt-[-20px] ml-[-30px] ">
+          <div className="flex mt-[-20px] ml-[-30px]  ">
             <Image
               src="/result/06-Seta-02.png"
               width={150}
@@ -268,7 +278,7 @@ const MethodItem = ({ item, openModal }: MethodItemProps) => {
           </div>
         )}
         {!item.left && Number(item.value) === 6 && (
-          <div className="flex mt-[-20px] ml-[-20px] ">
+          <div className="flex mt-[-23px] ml-[-30px]  ">
             <div className=" flex h-full flex-col items-center justify-center position-relative">
               <Image
                 src="/result/06-Seta-03.png"
@@ -303,17 +313,17 @@ const MethodItemDesktop = ({ item, openModal }: MethodItemProps) => {
       onClick={() => openModal(item.modalValues)}
     >
       {item?.left && (
-        <div className="text-4xl text-[#FFFFFF] flex items-center min-w-[40px]">
+        <div className="text-4xl  text-[#FFFFFF] flex items-center min-w-[40px]">
           {item?.value}
         </div>
       )}
-      <div className="bg-[#1C2026] flex rounded-[131px] w-full text-[#9FA7C4] p-4 gap-4 items-center">
+      <div className="bg-[#1C2026]  flex rounded-[131px] w-full text-[#9FA7C4] p-4 gap-4 items-center">
         <div className="flex items-center justify-center">
           <Image src={item.icon} width={70} height={150} alt={""} />
         </div>
         <div>
-          <p className="font-bold text-lg">{item.title}</p>
-          <p className="text-medium">{item.description}</p>
+          <p className="font-bold text-md ">{item.title}</p>
+          <p className="text-xsm ">{item.description}</p>
         </div>
       </div>
       {!item.left && (
@@ -349,9 +359,9 @@ export const Method = () => {
   };
 
   return (
-    <div className="bg-[#242E3D] flex flex-col items-center px-3 py-4">
-      <h1 className="text-[#FFFFFF] font-bold text-2xl">MÉTODO INSAEGHT</h1>
-      <p className="text-[#2BC0FB] text-sm">
+    <div className="bg-[#242E3D] flex flex-col items-center px-3 py-10">
+      <h1 className="text-[#FFFFFF] font-bold text-3xl">MÉTODO INSAEGHT</h1>
+      <p className="text-[#2BC0FB] text-md mt-3 mb-3">
         Clique no ícone para ver o conteúdo
       </p>
       <div className="flex gap-5 flex-col mt-10">

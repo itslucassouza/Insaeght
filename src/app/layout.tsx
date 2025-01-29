@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Insieght",
-  description: "Insieght",
+  title: "insaeght",
+  description: "insaeght",
 };
 
 export default function RootLayout({

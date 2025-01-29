@@ -31,8 +31,8 @@ const Header = () => {
   };
 
   return (
-    <header className="absolute top-0 left-0 w-full z-10 bg-black bg-opacity-30 h-[115px]">
-      <div className="mt-2 sm:justify-center md:container mx-auto p flex justify-center items-center">
+    <header className="absolute flex items-center justify-center  top-0 left-0 w-full z-10 bg-black bg-opacity-30 h-[145px]">
+      <div className="  md:w-[1050px] flex  items-center">
         {/* Botão do menu para mobile */}
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -42,12 +42,18 @@ const Header = () => {
         </button>
 
         {/* Logo */}
-        <div className="ml-[30px] lg:mr-0 flex justify-center items-center space-x-2 p-10">
-          <Image src="/result/logo.png" width={140} height={253} alt="Logo" />
+        <div className="md:mr-0 w-[30%]  mt-5  space-x-2 p-10">
+          <Image
+            src="/result/INSAEGHT-MARCA-02.svg"
+            width={140}
+            height={253}
+            alt="Logo"
+            priority
+          />
         </div>
 
         {/* Links da seção de desktop */}
-        <nav className="hidden md:flex space-x-6 text-white mr-8">
+        <nav className="hidden md:flex w-full  mt-5 items-center justify-center space-x-6 text-white mr-8">
           <a
             href="#home"
             onClick={(e) => {
@@ -111,7 +117,7 @@ const Header = () => {
         </nav>
 
         {/* Ícone do WhatsApp */}
-        <div className="sm:ml-0 md:flex items-center cursor-pointer  ">
+        <div className="sm:ml-0 md:flex  mt-5 items-center cursor-pointer  w-[10%] ">
           <FaWhatsapp className="text-3xl text-white" />
         </div>
       </div>
@@ -134,7 +140,7 @@ const Header = () => {
               {isOpen ? <AiOutlineClose size={30} /> : <FiMenu />}
             </button>
             <Image
-              src="/result/logo.png"
+              src="/result/INSAEGHT-MARCA-02.svg"
               width={150}
               height={200}
               alt="Banner"
